@@ -31,3 +31,14 @@ Step 1: Create a Namespace for Jenkins. It is good to categorize all the DevOps 
 
 Step 2: Create a 'jenkins-01-serviceAccount.yaml' file and copy the following admin service account manifest.
 
+The 'jenkins-01-serviceAccount.yaml' creates a 'jenkins-admin' clusterRole, 'jenkins-admin' ServiceAccount and binds the 'clusterRole' to the service account.
+
+The 'jenkins-admin' cluster role has all the permissions to manage the cluster components. You can also restrict access by specifying individual resource actions.
+
+Now create the service account using kubectl.
+
+`kubectl apply -f jenkins-01-serviceAccount.yaml`
+
+Step 3: Create 'jenkins-02-volume.yaml' and copy the following persistent volume manifest.
+
+
